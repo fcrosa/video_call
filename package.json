@@ -1,0 +1,22 @@
+{
+  "name": "video_call",
+  "version": "1.0.0",
+  "description": "This repository offers a space to experiment with videos and Playwright. It includes end-to-end automated tests to verify the core functionality of a video calling app.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcrosa/video_call.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcrosa/video_call/issues"
+  },
+  "homepage": "https://github.com/fcrosa/video_call#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.29"
+  }
+}
