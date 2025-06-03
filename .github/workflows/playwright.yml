@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ develop, main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 jobs:
   test:
     timeout-minutes: 60
@@ -19,6 +19,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Run Playwright Regression Tests
+      run: npx playwright test --grep @regression
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
