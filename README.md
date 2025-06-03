@@ -49,22 +49,6 @@ brew install nodejs
 brew install npm
 ```
 
-### Ffmpeg
-_FFmpeg is a powerful open-source multimedia framework used for recording, converting, streaming, and processing audio and video files_
-
-How to install:
-
-_Ubuntu/Debian (Linux)_
-``` 
-sudo apt update
-sudo apt install ffmpeg
-```
-
-_MacOs_
-``` 
-brew install ffmpeg 
-```
-
 ## 3. Install Playwright
 _Playwright Test was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari._
 
@@ -72,11 +56,15 @@ Install Playwright by following the steps detailed in:
 https://playwright.dev/docs/intro
 
 ### Run Tests
-You can execute the test scripts with the following command:
+You can execute the all tests with the following command:
 ```
 npx playwright test
 ```
 
+You can execute a subset of tests (by adding the test group tag) with the following command:
+```
+npx playwright test --grep @regression
+```
 
 ## 4. Happy Testing!
 If you have questions or encounter any issues, feel free to open an Issue in this repository.

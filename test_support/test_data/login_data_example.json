@@ -1,0 +1,7 @@
+{
+  "description": "Delete this key and Replace all keys below for your valid credentials and rename this file as: login_data_valid.json",
+  "appToken": "<Include your valid appToken>",
+  "appId": "<Include your valid appId>",
+  "channelName": "<Include your valid channelName>",
+  "userId": "<Include your valid userId>"
+}
