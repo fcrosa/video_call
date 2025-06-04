@@ -52,7 +52,12 @@ brew install npm
 ## 3. Install Playwright
 _Playwright Test was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari._
 
-Install Playwright by following the steps detailed in:
+Install Playwright with the following command:
+```
+npm init playwright@latest
+```
+
+If you have any questions you can follow the steps detailed in
 https://playwright.dev/docs/intro
 
 ### Run Tests
