@@ -57,15 +57,25 @@ Install Playwright with the following command:
 npm init playwright@latest
 ```
 
-_During installation, select:_
-``` 
-- Language : typescript
-- "test_e2e" folder to store the tests.
-And when the installer asks if you want to overwrite files, select NO.
-.../video_call/playwright.config.ts already exists. Override it? (y/N) · 
-```
+_During installation, you must select the following options : 
+* ~/src/video_call$ npm init playwright@latest
+Getting started with writing end-to-end tests with Playwright:
+Initializing project in '.'
+* Do you want to use TypeScript or JavaScript? · TypeScript
+* Where to put your end-to-end tests? · test_e2e
+* Add a GitHub Actions workflow? (y/N) · true
+* Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
+* Install Playwright operating system dependencies (requires sudo / root - can be done manually via 'sudo npx playwright install-deps')? (y/N) · true
 
-If you have any questions you can follow the steps detailed in
+Installing Playwright Test (npm install --save-dev @playwright/test)…
+
+added 5 packages, and audited 6 packages in 969ms
+
+found 0 vulnerabilities
+* ~/src/video_call/playwright.config.ts already exists. Override it? (y/N) · false
+* ~/src/video_call/.github/workflows/playwright.yml already exists. Override it? (y/N) · false
+
+> If you have any questions you can follow the steps detailed in
 https://playwright.dev/docs/intro
 
 ### Run Tests
