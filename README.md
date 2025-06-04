@@ -59,7 +59,8 @@ npm init playwright@latest
 
 _During installation, select:_
 ``` 
-typescript and "tests" folder to store the tests.
+- Language : typescript
+- "test_e2e" folder to store the tests.
 And when the installer asks if you want to overwrite files, select NO.
 .../video_call/playwright.config.ts already exists. Override it? (y/N) · 
 ```
