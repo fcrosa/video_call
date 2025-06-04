@@ -57,6 +57,11 @@ Install Playwright with the following command:
 npm init playwright@latest
 ```
 
+_During installation, select: typescript and "tests" folder to store the tests.
+And when the installer asks if you want to overwrite files, select NO.
+.../video_call/playwright.config.ts already exists. Override it? (y/N) · 
+.../video_call/.github/workflows/playwright.yml already exists. Override it? (y/N)_
+
 If you have any questions you can follow the steps detailed in
 https://playwright.dev/docs/intro
 
