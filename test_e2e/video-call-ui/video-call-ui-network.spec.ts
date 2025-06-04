@@ -29,7 +29,7 @@ test.describe("Video Call UI - Network Scenarios", () => {
 
   test('User without credentials cannot join the room with a low-speed connection', { tag:['@regression','@network'] }, 
     async ({ page }) => {
-    // USER CANNOT JOIN THE VIDEO CALL
+    // User cannot join the video call
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.userCannotJoinsTheCall(page);
     await Helpers.clickBtnByName(page,'Join');
@@ -38,7 +38,7 @@ test.describe("Video Call UI - Network Scenarios", () => {
 
   test('User joins the room and accesses the video call with a low-speed connection', { tag: ['@regression','@network'] }, 
     async ({ page }) => {
-    // USER JOINS VIDEO CALL
+    // User joins video call        
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.validUserJoinsTheCall(page);
     // Validate that the VideoCall was Launched
@@ -52,7 +52,7 @@ test.describe("Video Call UI - Network Scenarios", () => {
 
   test('User joins the room and configures the ADVANCED SETTINGS with a low-speed connection', 
     { tag: ['@regression','@network'] }, async ({ page }) => {
-    // USER JOINS VIDEO CALL
+    // User joins video call
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.validUserJoinsTheCall(page);
     await Helpers.validateAlertText(page, 'success-alert-with-token', 'Congratulations! Joined room successfully.'); 
@@ -64,7 +64,7 @@ test.describe("Video Call UI - Network Scenarios", () => {
     });
     // Validate UI Headers elements
     await Helpers.validateUIHeaders(page);
-    // ADVANCED SETTINGS
+    // Advanced Settings
     await Helpers.clickBtnByName(page,'ADVANCED SETTINGS');
     // Mic
     await Helpers.clickBtnByName(page,'Mics');

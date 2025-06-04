@@ -13,7 +13,7 @@ import * as Helpers from '../../test_support/helpers/helpers';
 test.describe("Video Call UI - Basic", () => {
 
   test('User without credentials cannot join the room', { tag:['@regression','@smoke','@basicUI'] }, async ({ page }) => {
-    // USER CANNOT JOIN THE VIDEO CALL
+    // User cannot join the video call
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.userCannotJoinsTheCall(page);
     await Helpers.clickBtnByName(page,'Join')
@@ -22,7 +22,7 @@ test.describe("Video Call UI - Basic", () => {
 
   test('User joins the room and accesses the video call', { tag: ['@regression','@smoke','@basicUI'] }, 
     async ({ page }) => {
-    // USER JOINS VIDEO CALL
+    // User joins video call
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.validUserJoinsTheCall(page);
     // Validate UI Headers elements

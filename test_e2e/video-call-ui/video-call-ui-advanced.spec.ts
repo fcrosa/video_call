@@ -15,7 +15,7 @@ test.describe("Video Call UI - Advanced", () => {
 
   test('User joins the room and configures the ADVANCED SETTINGS', { tag: ['@regression','@smoke','@advancedUI']}, 
     async ({ page }) => {
-    // USER JOINS VIDEO CALL        
+    // User joins video call
     await Helpers.userOpensVideoCallURL(page);
     await Helpers.validUserJoinsTheCall(page);
     await Helpers.validateAlertText(page, 'success-alert-with-token', 'Congratulations! Joined room successfully.'); 
@@ -23,7 +23,7 @@ test.describe("Video Call UI - Advanced", () => {
     await Helpers.validateVideoCallLaunched(page,'[id^="video_track-cam-"]');  
     // Validate UI Headers elements
     await Helpers.validateUIHeaders(page);
-    // ADVANCED SETTINGS
+    // Advance Settings
     await Helpers.clickBtnByName(page,'ADVANCED SETTINGS');
     // Mic
     await Helpers.clickBtnByName(page,'Mics');
@@ -40,7 +40,7 @@ test.describe("Video Call UI - Advanced", () => {
     await Helpers.clickLinkByName(page,'720p_1: 1280×720, 15fps,');
     await Helpers.clickBtnByName(page,'Profiles');
     await Helpers.clickLinkByName(page,'1080p_1: 1920×1080, 15fps,');
-    // Close ADVANCED SETTINGS
+    // Close Advance Settings
     await Helpers.clickBtnByName(page,'ADVANCED SETTINGS');
     await test.step("ADVANCED SETTINGS menu must have been closed", async () => {
       await expect(page.locator('Profiles')).toHaveCount(0);
