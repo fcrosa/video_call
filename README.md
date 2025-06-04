@@ -57,7 +57,7 @@ Install Playwright with the following command:
 npm init playwright@latest
 ```
 
-_During installation, you must select the following options : 
+_During installation, you must select the following options:_ 
 * ~/src/video_call$ npm init playwright@latest
 Getting started with writing end-to-end tests with Playwright:
 Initializing project in '.'
