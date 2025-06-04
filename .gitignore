@@ -5,4 +5,4 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-/test_support/test_data/login_data_valid.json
+#/test_support/test_data/login_data_valid.json
