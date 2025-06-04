@@ -1,7 +1,7 @@
 import { expect, test, Page } from '@playwright/test';
 import videoAttributes from './videoAttributtes.ts';
-import testUserData from '../test_data/login_data_valid.json';
 import testInvalidUserData from '../../test_support/test_data/login_data_example.json';
+import testUserData from '../../test_support/test_data/login_data_example.json';
 
 const user: TestUser = testUserData;
 const invalidUser: TestUser = testInvalidUserData;
