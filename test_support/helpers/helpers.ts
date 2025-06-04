@@ -1,8 +1,10 @@
 import { expect, test, Page } from '@playwright/test';
 import videoAttributes from './videoAttributtes.ts';
 import testUserData from '../test_data/login_data_valid.json';
+import testInvalidUserData from '../../test_support/test_data/login_data_example.json';
 
 const user: TestUser = testUserData;
+const invalidUser: TestUser = testInvalidUserData;
 
 type TestUser = {
   description: string;
@@ -19,8 +21,31 @@ export async function gotToURL(page: Page, baseURL: string): Promise<void> {
   });
 }
 
+// User open the Video Call URL
+export async function userOpensVideoCallURL(page: Page): Promise<void> {
+  const videoCallURL = 'https://webdemo.agora.io/basicVideoCall/index.html';
+  await gotToURL(page, videoCallURL);
+}
+
 // User Joins the video call
 export async function userJoinsTheCall(page: Page, user: TestUser): Promise<void> {
+  await fillInputTextByName(page,'Enter the appid', 'APPLICATION ID', user.appId);
+  await fillInputTextByName(page,'Enter the app token', 'TOKEN ID', user.appToken);
+  await fillInputTextByName(page,'Enter the channel name', 'CANNEL NAME', user.channelName);
+  await fillInputTextByName(page,'Enter the user ID', 'USER ID', user.userId);
+  await clickBtnByName(page,'Join');
+}
+
+// Unauthorized User cannot joins the video call
+export async function userCannotJoinsTheCall(page: Page): Promise<void> {
+  await fillInputTextByName(page,'Enter the appid', 'APPLICATION ID', invalidUser.appId);
+  await fillInputTextByName(page,'Enter the app token', 'TOKEN ID', invalidUser.appToken);
+  await fillInputTextByName(page,'Enter the channel name', 'CANNEL NAME', invalidUser.channelName);
+  await fillInputTextByName(page,'Enter the user ID', 'USER ID', invalidUser.userId);
+}
+
+// Valid User Joins the video call
+export async function validUserJoinsTheCall(page: Page): Promise<void> {
   await fillInputTextByName(page,'Enter the appid', 'APPLICATION ID', user.appId);
   await fillInputTextByName(page,'Enter the app token', 'TOKEN ID', user.appToken);
   await fillInputTextByName(page,'Enter the channel name', 'CANNEL NAME', user.channelName);
@@ -44,7 +69,6 @@ export async function validateAlertIsNotPresent(page: Page, alertId: string): Pr
     const alertLocator = page.locator(`#${alertId}`).first();
     await expect(alertLocator).toBeHidden();
   });
-
 }
 
 // Validate the user joined the video call
@@ -119,5 +143,14 @@ export async function clickLinkByName(page: Page, name: string): Promise<void> {
 export async function checkRadioByName(page: Page, name: string): Promise<void> {
   await test.step(`User selects '${name}' CODEC`, async () => {
     await page.getByRole('radio', { name: name }).check();
+  });
+}
+
+// Validate UI Headers elements
+export async function validateUIHeaders(page: Page,): Promise<void> {
+  await test.step("User should see headers text elements", async () => {
+    await expect(page.locator('#join-form')).toContainText('You find your APP ID in the Agora Console');
+    await expect(page.locator('#join-form')).toContainText('To create a temporary token, edit your project in Agora Console.');
+    await expect(page.locator('#join-form')).toContainText('You create a channel when you create a temporary token. You guessed it, in Agora Console');
   });
 }
